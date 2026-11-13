@@ -83,7 +83,7 @@ function campainhaAcionada() {
   }, 700);
 }
 
-$('simular').addEventListener('click', campainhaAcionada);
+if ($('simular')) $('simular').addEventListener('click', campainhaAcionada);
 
 $('entendi').addEventListener('click', function () {
   $('avisos').classList.remove('tocando');

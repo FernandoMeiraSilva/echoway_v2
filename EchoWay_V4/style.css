@@ -492,10 +492,24 @@ input:focus {
   margin: 0;
 }
 
+main.avisos-centro {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+main.avisos-centro .lateral {
+  position: static;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
 .caixa {
   padding: 1.25rem 1.25rem 1rem;
 }
 
+.caixa h1,
 .caixa h2 {
   margin-bottom: 0.15rem;
   font-size: 1.4rem;
@@ -615,8 +629,8 @@ footer {
 
 /* Responsivo */
 @media (min-width: 1320px) {
-  /* Em telas largas a caixa de avisos fica fixa na margem esquerda */
-  .lateral {
+  /* Em telas largas a caixa de avisos do painel fica fixa na margem esquerda */
+  .corpo .lateral {
     position: fixed;
     top: 6.5rem;
     z-index: 2;
