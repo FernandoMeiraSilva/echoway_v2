@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EchoWay – Campainha Inteligente para Surdos</title>
   <meta name="description"
-    content="EchoWay é a campainha inteligente para pessoas surdas ou com deficiência auditiva. Vibração na pulseira, flash de LED e notificação via Telegram." />
+    content="EchoWay é a campainha inteligente para pessoas surdas ou com deficiência auditiva. Vibração na pulseira, flash de LED e aviso no painel do site." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -16,7 +16,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="EchoWay – Campainha Inteligente para Surdos" />
   <meta property="og:description"
-    content="Quando alguém toca a campainha, a pulseira vibra, o LED pisca e o Telegram avisa." />
+    content="Quando alguém toca a campainha, a pulseira vibra, o LED pisca e o aviso aparece no site." />
   <meta property="og:image" content="assets/hero.png" />
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E" />
@@ -67,386 +67,395 @@
 
   <main id="main">
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Nunca mais perca uma visita.</h1>
-        <p class="hero-subtitle">
-          Quando alguém toca a campainha, a pulseira vibra, o LED pisca e o Telegram avisa. Em qualquer cômodo da casa.
-        </p>
-        <div class="hero-actions">
-          <a href="#pricing" class="btn-primary">Comprar o EchoWay</a>
-          <a href="#how-it-works" class="btn-ghost">Ver como funciona</a>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Nunca mais perca uma visita.</h1>
+          <p class="hero-subtitle">
+            Quando alguém toca a campainha, a pulseira vibra, o LED pisca e o aviso aparece no site. Em qualquer cômodo
+            da casa.
+          </p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn-primary">Comprar o EchoWay</a>
+            <a href="#how-it-works" class="btn-ghost">Ver como funciona</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="product-showcase">
+            <img src="assets/hero.png" alt="Campainha e pulseira EchoWay" class="product-hero-img" width="640"
+              height="640" fetchpriority="high" />
+          </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="product-showcase">
-          <img src="assets/hero.png" alt="Campainha e pulseira EchoWay" class="product-hero-img" width="640" height="640" fetchpriority="high" />
+    </section>
+
+    <!-- ===== COMO FUNCIONA ===== -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como funciona</h2>
+          <p>Do toque na campainha ao aviso no seu pulso, em três passos.</p>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="how-it-works-wrapper">
 
-  <!-- ===== COMO FUNCIONA ===== -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <h2>Como funciona</h2>
-        <p>Do toque na campainha ao aviso no seu pulso, em três passos.</p>
-      </div>
-      <div class="how-it-works-wrapper">
+          <!-- Simulador -->
+          <div class="interactive-simulator" id="interactiveSimulator">
 
-        <!-- Simulador -->
-        <div class="interactive-simulator" id="interactiveSimulator">
+            <!-- Campainha -->
+            <div class="sim-element element-doorbell">
+              <div class="doorbell-casing">
+                <div class="doorbell-sensor"></div>
+                <div class="doorbell-button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                </div>
+              </div>
+              <div class="ring-waves">
+                <div class="wave wave-1"></div>
+                <div class="wave wave-2"></div>
+              </div>
+            </div>
 
-          <!-- Campainha -->
-          <div class="sim-element element-doorbell">
-            <div class="doorbell-casing">
-              <div class="doorbell-sensor"></div>
-              <div class="doorbell-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            <!-- Caminho do sinal -->
+            <div class="sim-signal-path">
+              <div class="signal-line signal-to-bracelet">
+                <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
+                  <path d="M 10,50 Q 100,10 190,40" fill="none" stroke="var(--border-2)" stroke-width="2"
+                    stroke-dasharray="6,4" class="path-bg" />
+                  <path d="M 10,50 Q 100,10 190,40" fill="none" stroke="var(--accent-light)" stroke-width="3"
+                    class="path-pulse" />
+                </svg>
+              </div>
+              <div class="signal-line signal-to-phone">
+                <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
+                  <path d="M 10,50 Q 100,90 190,60" fill="none" stroke="var(--border-2)" stroke-width="2"
+                    stroke-dasharray="6,4" class="path-bg" />
+                  <path d="M 10,50 Q 100,90 190,60" fill="none" stroke="var(--accent-light)" stroke-width="3"
+                    class="path-pulse" />
                 </svg>
               </div>
             </div>
-            <div class="ring-waves">
-              <div class="wave wave-1"></div>
-              <div class="wave wave-2"></div>
-            </div>
-          </div>
 
-          <!-- Caminho do sinal -->
-          <div class="sim-signal-path">
-            <div class="signal-line signal-to-bracelet">
-              <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
-                <path d="M 10,50 Q 100,10 190,40" fill="none" stroke="var(--border-2)" stroke-width="2"
-                  stroke-dasharray="6,4" class="path-bg" />
-                <path d="M 10,50 Q 100,10 190,40" fill="none" stroke="var(--accent-light)" stroke-width="3"
-                  class="path-pulse" />
-              </svg>
-            </div>
-            <div class="signal-line signal-to-phone">
-              <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
-                <path d="M 10,50 Q 100,90 190,60" fill="none" stroke="var(--border-2)" stroke-width="2"
-                  stroke-dasharray="6,4" class="path-bg" />
-                <path d="M 10,50 Q 100,90 190,60" fill="none" stroke="var(--accent-light)" stroke-width="3"
-                  class="path-pulse" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Pulseira -->
-          <div class="sim-element element-bracelet">
-            <div class="wrist-outline">
-              <div class="bracelet-band">
-                <div class="bracelet-module">
-                  <span class="bracelet-led"></span>
+            <!-- Pulseira -->
+            <div class="sim-element element-bracelet">
+              <div class="wrist-outline">
+                <div class="bracelet-band">
+                  <div class="bracelet-module">
+                    <span class="bracelet-led"></span>
+                  </div>
                 </div>
               </div>
+              <div class="bracelet-vibrations">
+                <div class="vib-arc arc-l-1"></div>
+                <div class="vib-arc arc-l-2"></div>
+                <div class="vib-arc arc-r-1"></div>
+                <div class="vib-arc arc-r-2"></div>
+              </div>
             </div>
-            <div class="bracelet-vibrations">
-              <div class="vib-arc arc-l-1"></div>
-              <div class="vib-arc arc-l-2"></div>
-              <div class="vib-arc arc-r-1"></div>
-              <div class="vib-arc arc-r-2"></div>
-            </div>
-          </div>
 
-          <!-- Celular -->
-          <div class="sim-element element-phone">
-            <div class="phone-case">
-              <div class="phone-screen">
-                <div class="phone-notch"></div>
-                <div class="phone-wallpaper"></div>
-                <div class="telegram-alert">
-                  <div class="alert-header">
-                    <span class="alert-icon-telegram">
-                      <svg width="12" height="12" aria-hidden="true"><use href="#i-telegram" /></svg>
-                    </span>
-                    <span class="alert-app">Telegram</span>
-                    <span class="alert-time">agora</span>
-                  </div>
-                  <div class="alert-body">
-                    <strong>EchoWay</strong>
-                    <p>Tem alguém na porta.</p>
+            <!-- Celular -->
+            <div class="sim-element element-phone">
+              <div class="phone-case">
+                <div class="phone-screen">
+                  <div class="phone-notch"></div>
+                  <div class="phone-wallpaper"></div>
+                  <div class="telegram-alert">
+                    <div class="alert-header">
+                      <span class="alert-icon-telegram">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.5" aria-hidden="true">
+                          <circle cx="12" cy="12" r="4" />
+                          <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                        </svg>
+                      </span>
+                      <span class="alert-app">EchoWay</span>
+                      <span class="alert-time">agora</span>
+                    </div>
+                    <div class="alert-body">
+                      <strong>EchoWay</strong>
+                      <p>Tem alguém na porta.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Passos -->
-        <div class="steps-controller" id="stepsController">
-          <div class="step-control-item active" data-step="1">
-            <div class="step-ctrl-header">
-              <span class="step-ctrl-num">1</span>
-              <h3>Alguém aperta a campainha</h3>
+          <!-- Passos -->
+          <div class="steps-controller" id="stepsController">
+            <div class="step-control-item active" data-step="1">
+              <div class="step-ctrl-header">
+                <span class="step-ctrl-num">1</span>
+                <h3>Alguém aperta a campainha</h3>
+              </div>
+              <p>O visitante aperta o botão da campainha EchoWay, fixada na porta.</p>
             </div>
-            <p>O visitante aperta o botão da campainha EchoWay, fixada na porta.</p>
+
+            <div class="step-control-item" data-step="2">
+              <div class="step-ctrl-header">
+                <span class="step-ctrl-num">2</span>
+                <h3>A campainha avisa pelo Wi-Fi</h3>
+              </div>
+              <p>O sinal chega na pulseira e no celular ao mesmo tempo, em frações de segundo.</p>
+            </div>
+
+            <div class="step-control-item" data-step="3">
+              <div class="step-ctrl-header">
+                <span class="step-ctrl-num">3</span>
+                <h3>Você recebe o aviso de três jeitos</h3>
+              </div>
+              <p>A pulseira vibra, o LED pisca no pulso e o aviso aparece no painel do site.</p>
+            </div>
           </div>
 
-          <div class="step-control-item" data-step="2">
-            <div class="step-ctrl-header">
-              <span class="step-ctrl-num">2</span>
-              <h3>A campainha avisa pelo Wi-Fi</h3>
-            </div>
-            <p>O sinal chega na pulseira e no celular ao mesmo tempo, em frações de segundo.</p>
-          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="step-control-item" data-step="3">
-            <div class="step-ctrl-header">
-              <span class="step-ctrl-num">3</span>
-              <h3>Você recebe o aviso de três jeitos</h3>
+    <!-- ===== PRODUTO ===== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>O produto</h2>
+          <p>Uma campainha e uma pulseira, feitas para quem não ouve o toque.</p>
+        </div>
+        <div class="features-layout">
+          <div class="features-visual">
+            <div class="product-card">
+              <img src="assets/bracelet.png" alt="Pulseira EchoWay com LED" class="feature-img" width="640" height="640"
+                loading="lazy" decoding="async" />
+              <div class="product-card-info">
+                <h3>EchoWay</h3>
+                <p>A pulseira que vibra e acende o LED quando a campainha toca. Bateria de até 48 horas e recarga por
+                  USB-C.</p>
+              </div>
             </div>
-            <p>A pulseira vibra, o LED pisca no pulso e chega uma mensagem no Telegram.</p>
+          </div>
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-text">
+                <h3>Vibração forte</h3>
+                <p>O motor é potente o bastante para você sentir o aviso mesmo em movimento.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-text">
+                <h3>LED visível</h3>
+                <p>Um flash de LED pisca no pulso junto com a vibração.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-text">
+                <h3>Aviso no site</h3>
+                <p>Toda vez que a campainha toca, o painel de avisos do site pisca e registra o horário.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-text">
+                <h3>Alcance de 50 m</h3>
+                <p>Funciona pela rede Wi-Fi da sua casa, em todos os cômodos.</p>
+              </div>
+            </div>
+            <p class="footnote">Bateria e alcance podem variar conforme o uso e o ambiente.</p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quem já usa</h2>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <p class="review-text">"Sou surda há 15 anos e nunca conseguia atender a porta. Agora sinto a vibração no
+              pulso onde estiver em casa."</p>
+            <div class="reviewer">
+              <span class="reviewer-name">Ana Martins</span>
+              <span class="reviewer-location">São Paulo, SP</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Comprei para minha mãe, que tem perda auditiva severa. Em 10 minutos estava
+              funcionando, e o painel do site avisa tudo."</p>
+            <div class="reviewer">
+              <span class="reviewer-name">Ricardo Costa</span>
+              <span class="reviewer-location">Belo Horizonte, MG</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Meu filho tem surdez bilateral desde criança. Ele gosta da pulseira e sabe quando
+              tem alguém na porta."</p>
+            <div class="reviewer">
+              <span class="reviewer-name">Carlos Torres</span>
+              <span class="reviewer-location">Fortaleza, CE</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== PRODUTO ===== -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <h2>O produto</h2>
-        <p>Uma campainha e uma pulseira, feitas para quem não ouve o toque.</p>
-      </div>
-      <div class="features-layout">
-        <div class="features-visual">
-          <div class="product-card">
-            <img src="assets/bracelet.png" alt="Pulseira EchoWay com LED" class="feature-img" width="640" height="640" loading="lazy" decoding="async" />
-            <div class="product-card-info">
-              <h3>EchoBand</h3>
-              <p>A pulseira que vibra e acende o LED quando a campainha toca. Bateria de até 48 horas e recarga por
-                USB-C.</p>
+    <!-- ===== PREÇOS ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Comprar o EchoWay</h2>
+          <p>Entrega em todo o Brasil e 12 meses de garantia.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card featured">
+            <div class="pricing-header">
+              <span class="plan-name">EchoWay Completo</span>
+              <div class="plan-price">
+                <span class="price-currency">R$</span>
+                <span class="price-value">299</span>
+                <span class="price-period">à vista</span>
+              </div>
+              <p class="plan-desc">Campainha, pulseira e painel de avisos no site.</p>
             </div>
+            <ul class="plan-features">
+              <li>1 campainha inteligente</li>
+              <li>1 pulseira EchoBand</li>
+              <li>Painel de avisos online em tempo real</li>
+              <li>Garantia de 12 meses</li>
+              <li>Suporte vitalício</li>
+            </ul>
+            <a href="#contact" class="btn-plan featured-btn">Comprar</a>
           </div>
         </div>
-        <div class="features-list">
-          <div class="feature-item">
-            <div class="feature-text">
-              <h3>Vibração forte</h3>
-              <p>O motor é potente o bastante para você sentir o aviso mesmo em movimento.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-text">
-              <h3>LED visível</h3>
-              <p>Um flash de LED pisca no pulso junto com a vibração.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-text">
-              <h3>Aviso no Telegram</h3>
-              <p>Toda vez que a campainha toca, você recebe uma mensagem no celular.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-text">
-              <h3>Alcance de 50 m</h3>
-              <p>Funciona pela rede Wi-Fi da sua casa, em todos os cômodos.</p>
-            </div>
-          </div>
-          <p class="footnote">Bateria e alcance podem variar conforme o uso e o ambiente.</p>
-        </div>
+        <p class="pricing-note">Parcelamos em até 10x sem juros no cartão.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== DEPOIMENTOS ===== -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <div class="section-header">
-        <h2>Quem já usa</h2>
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
+              Precisa de internet para funcionar?
+              <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq1-answer">
+              <p>Sim. O EchoWay usa o Wi-Fi da sua casa para ligar a campainha à pulseira e enviar o aviso para o painel
+                do
+                site.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
+              Qual é o alcance da pulseira?
+              <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq2-answer">
+              <p>A vibração e o LED funcionam enquanto você estiver no alcance do Wi-Fi de casa, até 50 m. Paredes e
+                outros obstáculos podem reduzir esse valor.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
+              Quanto tempo dura a bateria da pulseira?
+              <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq3-answer">
+              <p>Até 48 horas com uso normal. A recarga é feita por cabo USB-C.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
+              Como funciona a notificação no site?
+              <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq4-answer">
+              <p>Você entra com seu login na área do cliente aqui no site. Quando a campainha toca, o painel de avisos
+                pisca em azul e mostra o horário do toque.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">
+              É difícil instalar?
+              <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq5-answer">
+              <p>Não. O produto vem com um guia ilustrado e videoaulas passo a passo. A instalação leva cerca de 20
+                minutos e não exige conhecimento técnico.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <p class="review-text">"Sou surda há 15 anos e nunca conseguia atender a porta. Agora sinto a vibração no
-            pulso onde estiver em casa."</p>
-          <div class="reviewer">
-            <span class="reviewer-name">Ana Martins</span>
-            <span class="reviewer-location">São Paulo, SP</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <p class="review-text">"Comprei para minha mãe, que tem perda auditiva severa. Em 10 minutos estava
-            funcionando, e o Telegram dela avisa tudo."</p>
-          <div class="reviewer">
-            <span class="reviewer-name">Ricardo Costa</span>
-            <span class="reviewer-location">Belo Horizonte, MG</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <p class="review-text">"Meu filho tem surdez bilateral desde criança. Ele gosta da pulseira e sabe quando
-            tem alguém na porta."</p>
-          <div class="reviewer">
-            <span class="reviewer-name">Carlos Torres</span>
-            <span class="reviewer-location">Fortaleza, CE</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== PREÇOS ===== -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <h2>Comprar o EchoWay</h2>
-        <p>Entrega em todo o Brasil e 12 meses de garantia.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card featured">
-          <div class="pricing-header">
-            <span class="plan-name">EchoWay Completo</span>
-            <div class="plan-price">
-              <span class="price-currency">R$</span>
-              <span class="price-value">299</span>
-              <span class="price-period">à vista</span>
+    <!-- ===== CONTATO ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Fale com a gente</h2>
+            <p>Ficou com alguma dúvida? Escreva para nós e respondemos em até 24 horas.</p>
+            <div class="contact-methods">
+              <a href="https://t.me/echoway" class="contact-method" target="_blank" rel="noopener">
+                <span class="cm-label">Telegram</span>
+                <span class="cm-value">@echoway</span>
+              </a>
+              <a href="mailto:contato@echoway.com.br" class="contact-method">
+                <span class="cm-label">E-mail</span>
+                <span class="cm-value">contato@echoway.com.br</span>
+              </a>
+              <div class="contact-method">
+                <span class="cm-label">Endereço</span>
+                <span class="cm-value">Cuiabá, MT</span>
+              </div>
             </div>
-            <p class="plan-desc">Campainha, pulseira e avisos no Telegram.</p>
           </div>
-          <ul class="plan-features">
-            <li>1 campainha inteligente</li>
-            <li>1 pulseira EchoBand</li>
-            <li>Notificações ilimitadas no Telegram</li>
-            <li>Garantia de 12 meses</li>
-            <li>Suporte vitalício</li>
-          </ul>
-          <a href="#contact" class="btn-plan featured-btn">Comprar</a>
-        </div>
-      </div>
-      <p class="pricing-note">Parcelamos em até 10x sem juros no cartão.</p>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Perguntas frequentes</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
-            Precisa de internet para funcionar?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="faq-answer" id="faq1-answer">
-            <p>Sim. O EchoWay usa o Wi-Fi da sua casa para ligar a campainha à pulseira e para enviar a mensagem pelo
-              Telegram.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
-            Qual é o alcance da pulseira?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="faq-answer" id="faq2-answer">
-            <p>A vibração e o LED funcionam enquanto você estiver no alcance do Wi-Fi de casa, até 50 m. Paredes e
-              outros obstáculos podem reduzir esse valor.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
-            Quanto tempo dura a bateria da pulseira?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="faq-answer" id="faq3-answer">
-            <p>Até 48 horas com uso normal. A recarga é feita por cabo USB-C.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
-            Como funciona a notificação no Telegram?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="faq-answer" id="faq4-answer">
-            <p>No app EchoWay você cadastra o seu usuário do Telegram. Quando a campainha toca, o bot do EchoWay envia
-              uma mensagem para você.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">
-            É difícil instalar?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="faq-answer" id="faq5-answer">
-            <p>Não. O produto vem com um guia ilustrado e videoaulas passo a passo. A instalação leva cerca de 20
-              minutos e não exige conhecimento técnico.</p>
+          <div class="contact-form-wrap">
+            <form class="contact-form" id="contactForm">
+              <h3>Envie uma mensagem</h3>
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telegram (opcional)</label>
+                <input type="text" id="phone" name="phone" placeholder="@seuusuario" />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary form-submit">Enviar mensagem</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTATO ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2>Fale com a gente</h2>
-          <p>Ficou com alguma dúvida? Escreva para nós e respondemos em até 24 horas.</p>
-          <div class="contact-methods">
-            <a href="https://t.me/echoway" class="contact-method" target="_blank" rel="noopener">
-              <span class="cm-label">Telegram</span>
-              <span class="cm-value">@echoway</span>
-            </a>
-            <a href="mailto:contato@echoway.com.br" class="contact-method">
-              <span class="cm-label">E-mail</span>
-              <span class="cm-value">contato@echoway.com.br</span>
-            </a>
-            <div class="contact-method">
-              <span class="cm-label">Endereço</span>
-              <span class="cm-value">Cuiabá, MT</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form-wrap">
-          <form class="contact-form" id="contactForm">
-            <h3>Envie uma mensagem</h3>
-            <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" placeholder="Seu nome" required />
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Telegram (opcional)</label>
-              <input type="text" id="phone" name="phone" placeholder="@seuusuario" />
-            </div>
-            <div class="form-group">
-              <label for="message">Mensagem</label>
-              <textarea id="message" name="message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary form-submit">Enviar mensagem</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   </main>
 
@@ -494,7 +503,8 @@
 
   <!-- ===== CHAT ===== -->
   <div class="chatbot-wrapper">
-    <button class="chatbot-bubble" id="chatbotBubble" aria-label="Abrir chat" aria-expanded="false" aria-controls="chatbotWindow">
+    <button class="chatbot-bubble" id="chatbotBubble" aria-label="Abrir chat" aria-expanded="false"
+      aria-controls="chatbotWindow">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
       </svg>

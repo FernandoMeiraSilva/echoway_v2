@@ -116,7 +116,7 @@ function initSimulator() {
 const CHAT_REPLIES = [
   {
     patterns: [/\b(pre[çc]o|valor|custa|quanto|parcel\w*)\b/i],
-    answer: 'O EchoWay Completo custa R$ 299 à vista, ou em até 10x sem juros no cartão. Vem com 1 campainha, 1 pulseira EchoBand e notificações ilimitadas no Telegram.',
+    answer: 'O EchoWay Completo custa R$ 299 à vista, ou em até 10x sem juros no cartão. Vem com 1 campainha, 1 pulseira EchoBand e acesso ao painel de avisos no site.',
   },
   {
     patterns: [/\b(frete|entrega|envio|prazo)\b/i],
@@ -135,8 +135,8 @@ const CHAT_REPLIES = [
     answer: 'A EchoBand vibra forte e tem um LED visível. A bateria dura até 48 horas e a recarga é por cabo USB-C.',
   },
   {
-    patterns: [/\b(telegram|notifica\w+|aviso)\b/i],
-    answer: 'Você cadastra seu usuário do Telegram no app EchoWay. Toda vez que a campainha toca, o bot do EchoWay envia uma mensagem.',
+    patterns: [/\b(painel|site|notifica\w+|aviso)\b/i],
+    answer: 'Você entra com seu login no site do EchoWay. Toda vez que a campainha toca, o painel de avisos pisca e registra o horário.',
   },
   {
     patterns: [/\b(instal\w+|configur\w+)\b/i],
@@ -148,14 +148,14 @@ const CHAT_REPLIES = [
   },
   {
     patterns: [/\bfunciona\w*\b/i, /\bcomo\b/i],
-    answer: 'Quando alguém aperta a campainha, o sinal vai pelo Wi-Fi até a pulseira e o celular. A pulseira vibra, o LED pisca e você recebe uma mensagem no Telegram.',
+    answer: 'Quando alguém aperta a campainha, o sinal vai pelo Wi-Fi até a pulseira e o site. A pulseira vibra, o LED pisca e o aviso aparece no painel do site.',
   },
   {
     patterns: [/\b(ol[áa]|oi|bom dia|boa tarde|boa noite)\b/i],
     answer: 'Olá! O que você quer saber sobre o EchoWay?',
   },
 ];
-const CHAT_FALLBACK = 'Não entendi bem. Pergunte sobre preço, pulseira, Telegram, alcance, garantia, frete ou instalação.';
+const CHAT_FALLBACK = 'Não entendi bem. Pergunte sobre preço, pulseira, painel do site, alcance, garantia, frete ou instalação.';
 
 const chatReply = (text) =>
   (CHAT_REPLIES.find((r) => r.patterns.some((p) => p.test(text))) || { answer: CHAT_FALLBACK }).answer;
