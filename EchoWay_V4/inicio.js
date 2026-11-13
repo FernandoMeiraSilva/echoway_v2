@@ -1,9 +1,5 @@
-// Pedido de demonstração: não envia nada, só mostra a confirmação.
-var formPedido = document.getElementById('form-pedido');
-if (formPedido) {
-  formPedido.addEventListener('submit', function (e) {
-    e.preventDefault();
-    formPedido.hidden = true;
-    document.getElementById('pedido-ok').hidden = false;
-  });
+// Sair: apaga o login e volta para a página de venda
+var btnSair = document.getElementById('sair');
+if (btnSair) {
+  btnSair.addEventListener('click', function () { apagarLogin(); });
 }

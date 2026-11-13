@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="auth.js"></script>
+<script>if (!estaLogado()) { location.replace('login.html'); }</script>
 </head>
 <body>
 <div class="pagina">
@@ -22,7 +24,7 @@
     <nav aria-label="Principal">
       <a href="index.html" aria-current="page">Início</a>
       <a href="painel.html">Painel de avisos</a>
-      <a href="login.html">Entrar</a>
+      <a href="../index.html" id="sair">Sair</a>
     </nav>
   </header>
 
@@ -62,16 +64,10 @@
     <div class="abertura">
       <p>Campainha para quem não ouve. Quando alguém chega, a pulseira vibra e acende.</p>
       <div class="acoes">
-        <a class="btn" href="#pedido">Quero o meu</a>
-        <a class="link" href="painel.html">Ver o painel de avisos</a>
+        <a class="btn" href="painel.html">Abrir o painel de avisos</a>
+        <a class="link" href="#passos">Ver como funciona</a>
       </div>
     </div>
-
-    <section class="secao" id="login">
-      <h2>Já tem o produto?</h2>
-      <p>Faça o login para ver os avisos da sua campainha.</p>
-      <a class="btn" href="login.html">Fazer login</a>
-    </section>
 
     <section class="secao" id="problema">
       <h2>A campainha comum depende do som</h2>
@@ -147,19 +143,6 @@
         <summary>Como paro o aviso no painel?</summary>
         <p>Toque no botão Entendi, logo abaixo da caixa de avisos. A caixa para de piscar e o toque continua na lista das últimas 24 horas.</p>
       </details>
-    </section>
-
-    <section class="secao pedido" id="pedido">
-      <h2>Quer um EchoWay em casa?</h2>
-      <p>Deixe seu e-mail e entramos em contato.</p>
-      <form id="form-pedido">
-        <div class="campo">
-          <label for="email-pedido">E-mail</label>
-          <input id="email-pedido" type="email" placeholder="voce@exemplo.com">
-        </div>
-        <button class="btn" type="submit">Quero o meu</button>
-      </form>
-      <p id="pedido-ok" role="status" hidden>Recebemos seu pedido. Obrigado!</p>
     </section>
   </main>
 
