@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EchoWay: entrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="entrada">
+  <div class="cartao">
+    <figure class="placa">
+      <svg viewBox="0 0 760 340" role="img" aria-labelledby="t-pulseira">
+          <title id="t-pulseira">Pulseira EchoWay vista de cima, com módulo central e um LED aceso</title>
+          <defs>
+            <pattern id="trama-banda" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+              <rect width="7" height="7" fill="var(--banda)"/>
+              <rect width="7" height="2" fill="#ffffff" fill-opacity="0.07"/>
+            </pattern>
+            <filter id="desfoque" x="-10%" y="-30%" width="120%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
+            <filter id="brilho" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+          </defs>
+          <path d="M 90 286 Q 380 126 670 286" fill="none" stroke="#000" stroke-opacity="0.2" stroke-width="64" stroke-linecap="round" filter="url(#desfoque)"/>
+          <path d="M 90 270 Q 380 110 670 270" fill="none" stroke="var(--banda-escura)" stroke-width="68" stroke-linecap="round"/>
+          <path d="M 90 270 Q 380 110 670 270" fill="none" stroke="url(#trama-banda)" stroke-width="60" stroke-linecap="round"/>
+          <path d="M 90 255 Q 380 95 670 255" fill="none" stroke="#fff" stroke-opacity="0.1" stroke-width="10" stroke-linecap="round"/>
+          <g fill="var(--banda-escura)">
+            <circle cx="438" cy="193" r="5"/><circle cx="484" cy="200" r="5"/><circle cx="531" cy="212" r="5"/><circle cx="577" cy="227" r="5"/>
+          </g>
+          <circle cx="380" cy="190" r="34" fill="var(--led)" opacity="0.5" filter="url(#brilho)"/>
+          <rect x="310" y="148" width="140" height="84" rx="26" fill="var(--modulo)"/>
+          <rect x="310" y="148" width="140" height="84" rx="26" fill="none" stroke="#000" stroke-opacity="0.12" stroke-width="2"/>
+          <circle cx="380" cy="190" r="13" fill="var(--led)"/>
+          <circle cx="376" cy="186" r="4" fill="#fff" opacity="0.7"/>
+          <g fill="none" stroke="var(--led)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+            <path d="M 292 170 q -12 20 0 40"/><path d="M 274 160 q -21 30 0 60"/>
+            <path d="M 468 170 q 12 20 0 40"/><path d="M 486 160 q 21 30 0 60"/>
+          </g>
+        </svg>
+    </figure>
+    <h1 class="titulo">Entrar</h1>
+    <p class="intro">Entre para ver os avisos da sua campainha.</p>
+    <form id="form-login">
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" autocomplete="username" placeholder="voce@exemplo.com">
+      </div>
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" autocomplete="current-password">
+      </div>
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+    <p class="voltar"><a href="index.html">Voltar para o início</a></p>
+  </div>
+</main>
+
+<script src="auth.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

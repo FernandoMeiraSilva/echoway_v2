@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EchoWay: a campainha que você vê</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pagina">
+  <header>
+    <a class="marca" href="index.html">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+        <circle cx="8" cy="16" r="2.6" fill="currentColor" stroke="none"/>
+        <path d="M14 10a8 8 0 0 1 0 12"/><path d="M19 6a14 14 0 0 1 0 20"/><path d="M24 2.5a19.5 19.5 0 0 1 0 27"/>
+      </svg>
+      EchoWay
+    </a>
+    <nav aria-label="Principal">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="painel.html">Painel de avisos</a>
+      <a href="login.html">Entrar</a>
+    </nav>
+  </header>
+
+  <main>
+    <figure class="placa">
+      <h1>EchoWay</h1>
+      <svg viewBox="0 0 760 340" role="img" aria-labelledby="t-pulseira">
+          <title id="t-pulseira">Pulseira EchoWay vista de cima, com módulo central e um LED aceso</title>
+          <defs>
+            <pattern id="trama-banda" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+              <rect width="7" height="7" fill="var(--banda)"/>
+              <rect width="7" height="2" fill="#ffffff" fill-opacity="0.07"/>
+            </pattern>
+            <filter id="desfoque" x="-10%" y="-30%" width="120%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
+            <filter id="brilho" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+          </defs>
+          <path d="M 90 286 Q 380 126 670 286" fill="none" stroke="#000" stroke-opacity="0.2" stroke-width="64" stroke-linecap="round" filter="url(#desfoque)"/>
+          <path d="M 90 270 Q 380 110 670 270" fill="none" stroke="var(--banda-escura)" stroke-width="68" stroke-linecap="round"/>
+          <path d="M 90 270 Q 380 110 670 270" fill="none" stroke="url(#trama-banda)" stroke-width="60" stroke-linecap="round"/>
+          <path d="M 90 255 Q 380 95 670 255" fill="none" stroke="#fff" stroke-opacity="0.1" stroke-width="10" stroke-linecap="round"/>
+          <g fill="var(--banda-escura)">
+            <circle cx="438" cy="193" r="5"/><circle cx="484" cy="200" r="5"/><circle cx="531" cy="212" r="5"/><circle cx="577" cy="227" r="5"/>
+          </g>
+          <circle cx="380" cy="190" r="34" fill="var(--led)" opacity="0.5" filter="url(#brilho)"/>
+          <rect x="310" y="148" width="140" height="84" rx="26" fill="var(--modulo)"/>
+          <rect x="310" y="148" width="140" height="84" rx="26" fill="none" stroke="#000" stroke-opacity="0.12" stroke-width="2"/>
+          <circle cx="380" cy="190" r="13" fill="var(--led)"/>
+          <circle cx="376" cy="186" r="4" fill="#fff" opacity="0.7"/>
+          <g fill="none" stroke="var(--led)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+            <path d="M 292 170 q -12 20 0 40"/><path d="M 274 160 q -21 30 0 60"/>
+            <path d="M 468 170 q 12 20 0 40"/><path d="M 486 160 q 21 30 0 60"/>
+          </g>
+        </svg>
+      <figcaption>Ilustração da pulseira. Um LED e um motor vibratório dentro do módulo.</figcaption>
+    </figure>
+
+    <div class="abertura">
+      <p>Campainha para quem não ouve. Quando alguém chega, a pulseira vibra e acende.</p>
+      <div class="acoes">
+        <a class="btn" href="#pedido">Quero o meu</a>
+        <a class="link" href="painel.html">Ver o painel de avisos</a>
+      </div>
+    </div>
+
+    <section class="secao" id="login">
+      <h2>Já tem o produto?</h2>
+      <p>Faça o login para ver os avisos da sua campainha.</p>
+      <a class="btn" href="login.html">Fazer login</a>
+    </section>
+
+    <section class="secao" id="problema">
+      <h2>A campainha comum depende do som</h2>
+      <p>Quem não escuta bem perde a visita, a entrega e o vizinho que veio avisar alguma coisa. O EchoWay troca o som por vibração no pulso e por luz, que o corpo percebe sem esforço.</p>
+    </section>
+
+    <section class="secao" id="passos">
+      <h2>Como funciona</h2>
+      <p class="intro">Do toque na porta ao aviso no pulso, em quatro passos.</p>
+      <ol class="passos">
+        <li>
+          <span class="num">1</span>
+          <div><h3>Alguém aperta a campainha</h3><p>O botão fica na porta, como o de uma campainha comum.</p></div>
+          <svg viewBox="0 0 96 96" aria-hidden="true"><rect x="28" y="10" width="40" height="76" rx="7"/><circle cx="48" cy="36" r="10"/><path d="M39 64h18"/><path d="M42 72h12"/></svg>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div><h3>O aviso vai pela internet</h3><p>O ESP32 da campainha, conectado à internet, envia o aviso para a pulseira e para o site.</p></div>
+          <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="20" cy="48" r="5" fill="var(--tinta)" stroke="none"/><path d="M36 34a20 20 0 0 1 0 28"/><path d="M50 24a34 34 0 0 1 0 48"/><path d="M64 14a48 48 0 0 1 0 68"/></svg>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div><h3>A pulseira vibra e acende</h3><p>O motor vibra e o LED acende. Quem usa percebe pelo corpo e pela luz, sem precisar ouvir.</p></div>
+          <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M10 66Q48 18 86 66" stroke-width="9"/><rect x="34" y="38" width="28" height="20" rx="6" fill="var(--papel)"/><circle cx="48" cy="48" r="4.5" fill="var(--led)" stroke="none"/><path d="M22 36q-6 8 0 16" stroke="var(--led)"/><path d="M74 36q6 8 0 16" stroke="var(--led)"/></svg>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div><h3>O aviso aparece no site</h3><p>A caixa de avisos pisca em azul e mostra "Campainha acionada", com o horário.</p></div>
+          <svg viewBox="0 0 96 96" aria-hidden="true"><rect x="12" y="16" width="72" height="46" rx="10"/><path d="M30 62l-6 16l20-16"/><path d="M26 34h44"/><path d="M26 46h28"/></svg>
+        </li>
+      </ol>
+    </section>
+
+    <section class="secao" id="conteudo">
+      <h2>O que vem no EchoWay</h2>
+      <dl class="itens">
+        <div><dt>Campainha da porta</dt><dd>O botão que o visitante aperta. Ao ser apertado, o ESP32 dela avisa a pulseira e o painel pela internet.</dd></div>
+        <div><dt>Pulseira</dt><dd>Vibra e acende um LED quando alguém toca. Recebe o aviso pela internet, enviado pela campainha.</dd></div>
+        <div><dt>Painel de avisos</dt><dd>Uma página que mostra cada toque, com data e horário, e guarda as últimas 24 horas.</dd></div>
+      </dl>
+    </section>
+
+    <section class="secao" id="publico">
+      <h2>Para quem é</h2>
+      <ul class="simples">
+        <li>Pessoas surdas ou com perda auditiva.</li>
+        <li>Idosos que já não ouvem a campainha de casa.</li>
+        <li>Famílias que querem um aviso a mais para quem não ouve.</li>
+      </ul>
+    </section>
+
+    <section class="secao destaque" id="demonstracao">
+      <h2>Veja o painel de avisos</h2>
+      <p>Cada toque aparece na hora, com data e horário. A caixa pisca em azul até você confirmar, e dá para testar sem a campainha.</p>
+      <a class="btn" href="painel.html">Abrir o painel</a>
+    </section>
+
+    <section class="secao faq" id="perguntas">
+      <h2>Perguntas frequentes</h2>
+      <details>
+        <summary>E se eu não estiver olhando para a tela?</summary>
+        <p>A pulseira vibra e acende na hora, mesmo com o site fechado.</p>
+      </details>
+      <details>
+        <summary>Os avisos ficam guardados?</summary>
+        <p>O painel guarda os toques das últimas 24 horas. Depois disso, eles saem da lista.</p>
+      </details>
+      <details>
+        <summary>Quem toca a campainha recebe alguma resposta?</summary>
+        <p>Não. O aviso só informa que alguém está na porta. Não existe conversa com quem tocou.</p>
+      </details>
+      <details>
+        <summary>Como paro o aviso no painel?</summary>
+        <p>Toque no botão Entendi, logo abaixo da caixa de avisos. A caixa para de piscar e o toque continua na lista das últimas 24 horas.</p>
+      </details>
+    </section>
+
+    <section class="secao pedido" id="pedido">
+      <h2>Quer um EchoWay em casa?</h2>
+      <p>Deixe seu e-mail e entramos em contato.</p>
+      <form id="form-pedido">
+        <div class="campo">
+          <label for="email-pedido">E-mail</label>
+          <input id="email-pedido" type="email" placeholder="voce@exemplo.com">
+        </div>
+        <button class="btn" type="submit">Quero o meu</button>
+      </form>
+      <p id="pedido-ok" role="status" hidden>Recebemos seu pedido. Obrigado!</p>
+    </section>
+  </main>
+
+  <footer>EchoWay</footer>
+</div>
+
+<script src="inicio.js"></script>
+</body>
+</html>
