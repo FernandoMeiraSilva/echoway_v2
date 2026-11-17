@@ -9,7 +9,11 @@ var DIA = 24 * 60 * 60 * 1000;
 function ler() {
   try {
     var l = JSON.parse(localStorage.getItem(CHAVE) || '[]');
-    return Array.isArray(l) ? l : [];
+    if (!Array.isArray(l)) return [];
+    // Avisos antigos eram só o horário (número); converte para o formato novo
+    return l.map(function (a) {
+      return typeof a === 'number' ? { t: a, teste: false } : a;
+    });
   } catch (e) { return []; }
 }
 function gravar() {
@@ -30,7 +34,7 @@ function rotulo(t) {
 
 function desenhar() {
   var corte = Date.now() - DIA;
-  avisos = avisos.filter(function (t) { return typeof t === 'number' && t >= corte; });
+  avisos = avisos.filter(function (a) { return a && typeof a.t === 'number' && a.t >= corte; });
   gravar();
 
   var lista = $('mensagens');
@@ -45,13 +49,19 @@ function desenhar() {
     lista.appendChild(vazio);
     return;
   }
-  avisos.slice().reverse().forEach(function (t, i) {
+  avisos.slice().reverse().forEach(function (a, i) {
     var div = document.createElement('div');
     div.className = 'msg pulseira' + (i === 0 ? ' recente' : '');
     var meta = document.createElement('small');
-    meta.textContent = rotulo(t);
+    meta.textContent = rotulo(a.t);
     var corpo = document.createElement('span');
     corpo.textContent = 'Campainha acionada';
+    if (a.teste) {
+      var tag = document.createElement('em');
+      tag.className = 'tag-teste';
+      tag.textContent = 'Teste';
+      corpo.appendChild(tag);
+    }
     div.appendChild(meta);
     div.appendChild(corpo);
     lista.appendChild(div);
@@ -59,17 +69,18 @@ function desenhar() {
 }
 
 // Registra um toque na lista (para o aviso completo, use campainhaAcionada())
-function adicionar(momento) {
-  avisos.push(momento || Date.now());
+function adicionar(momento, teste) {
+  avisos.push({ t: momento || Date.now(), teste: !!teste });
   desenhar();
 }
 
 desenhar();
 setInterval(desenhar, 60000);
 
-// Chame campainhaAcionada() sempre que a campainha for acionada
-function campainhaAcionada() {
-  adicionar();
+// Chame campainhaAcionada() sempre que a campainha for acionada.
+// Só o botão "Testar aviso" passa teste = true (aparece a etiqueta "Teste").
+function campainhaAcionada(teste) {
+  adicionar(null, teste === true);
   var caixa = $('avisos');
   caixa.classList.add('tocando');
   $('entendi').hidden = false;
@@ -83,7 +94,7 @@ function campainhaAcionada() {
   }, 700);
 }
 
-if ($('simular')) $('simular').addEventListener('click', campainhaAcionada);
+if ($('simular')) $('simular').addEventListener('click', function () { campainhaAcionada(true); });
 
 $('entendi').addEventListener('click', function () {
   $('avisos').classList.remove('tocando');
