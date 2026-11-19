@@ -225,6 +225,41 @@ function initContactForm() {
   });
 }
 
+function initTheme() {
+  const toggle = $('#themeToggle');
+  if (!toggle) return;
+
+  const root = document.documentElement;
+  const themeColorMeta = $('meta[name="theme-color"]');
+
+  const apply = (light) => {
+    if (light) {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    toggle.setAttribute('aria-pressed', String(light));
+    toggle.setAttribute('aria-label', light ? 'Mudar para tema escuro' : 'Mudar para tema claro');
+    toggle.setAttribute('title', light ? 'Tema escuro' : 'Tema claro');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', light ? '#ffffff' : '#000000');
+    }
+  };
+
+  apply(root.getAttribute('data-theme') === 'light');
+
+  toggle.addEventListener('click', () => {
+    const nextLight = root.getAttribute('data-theme') !== 'light';
+    apply(nextLight);
+    try {
+      localStorage.setItem('echoway-theme', nextLight ? 'light' : 'dark');
+    } catch (_) {
+      // Ignora erro caso o navegador bloqueie o armazenamento local.
+    }
+  });
+}
+
+initTheme();
 initNav();
 initFaq();
 initSimulator();
