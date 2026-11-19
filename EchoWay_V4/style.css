@@ -4,6 +4,7 @@
   --surface: #161616;
   --border: rgb(255 255 255 / 0.08);
   --border-2: rgb(255 255 255 / 0.14);
+  --border-hover: rgb(255 255 255 / 0.25);
   --text: #f5f5f7;
   --text-2: #a1a1a6;
   --text-3: #8e8e93;
@@ -36,6 +37,28 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* Tema claro */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-2: #f5f5f7;
+  --surface: #ffffff;
+  --border: rgb(0 0 0 / 0.1);
+  --border-2: rgb(0 0 0 / 0.16);
+  --border-hover: rgb(0 0 0 / 0.28);
+  --text: #1d1d1f;
+  --text-2: #515154;
+  --text-3: #6e6e73;
+
+  --accent-rgb: 0 113 227;
+  --accent: rgb(var(--accent-rgb));
+  --accent-light: #0077ed;
+  --success: #248a3d;
+  --shadow: 0 4px 20px rgb(0 0 0 / 0.06);
+  --modulo: #ffffff;
+
+  color-scheme: light;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -53,6 +76,7 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .pagina {
@@ -111,6 +135,7 @@ header {
 nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.4rem 1.5rem;
 }
 
@@ -124,6 +149,47 @@ nav a {
 nav a:hover,
 nav a[aria-current='page'] {
   color: var(--text);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-2);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+  background: var(--bg-2);
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+.theme-toggle-fixed {
+  position: fixed;
+  top: max(1.25rem, env(safe-area-inset-top, 0px));
+  right: clamp(1.25rem, 5vw, 2rem);
+  z-index: 10;
 }
 
 /* Blocos */
@@ -144,6 +210,15 @@ main {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+}
+
+[data-theme="light"] .cartao,
+[data-theme="light"] .caixa,
+[data-theme="light"] .secao,
+[data-theme="light"] .coluna,
+[data-theme="light"] .painel-topo,
+[data-theme="light"] .abertura {
+  box-shadow: var(--shadow);
 }
 
 .abertura,
