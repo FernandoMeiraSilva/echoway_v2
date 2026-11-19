@@ -13,7 +13,7 @@ python3 -m http.server 8000
 ## Estrutura
 
 ```
-index.html        página única (hero, como funciona, produto, depoimentos, compra, dúvidas, contato)
+index.html        página única (hero, como funciona, produto, compra, dúvidas, contato)
 style.css         estilos, na ordem da página; tokens no :root
 script.js         menu, FAQ, simulador "Como funciona", chat e formulário
 assets/           imagens do produto
