@@ -293,13 +293,13 @@ h2 {
   margin: 0;
 }
 
-.secao > p {
+.secao>p {
   max-width: 52ch;
   margin: 0 0 1rem;
   color: var(--text-2);
 }
 
-.secao > .intro {
+.secao>.intro {
   margin-bottom: 1.75rem;
 }
 
@@ -415,7 +415,7 @@ dl.itens {
   margin: 0;
 }
 
-dl.itens > div {
+dl.itens>div {
   display: grid;
   grid-template-columns: 12rem minmax(0, 1fr);
   gap: 0.25rem 1.5rem;
@@ -490,12 +490,21 @@ ul.simples li {
 
 .cartao .placa {
   margin-bottom: 1.5rem;
-  padding: 1rem 0.5rem 0.4rem;
+  padding: 0;
+  overflow: hidden;
   background: var(--bg-2);
 }
 
 .cartao .placa svg {
   margin-top: 0;
+}
+
+.cartao .placa img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .cartao .intro {
@@ -689,6 +698,7 @@ main.avisos-centro .lateral {
 }
 
 @keyframes pulsar {
+
   0%,
   100% {
     box-shadow:
@@ -697,6 +707,7 @@ main.avisos-centro .lateral {
       0 0 36px 12px rgb(var(--accent-rgb) / 0.35),
       0 0 70px 26px rgb(var(--accent-rgb) / 0.15);
   }
+
   50% {
     box-shadow:
       0 0 0 2px rgb(var(--accent-rgb) / 0.2),
@@ -717,6 +728,7 @@ footer {
 
 /* Responsivo */
 @media (min-width: 1320px) {
+
   /* Em telas largas a caixa de avisos do painel fica fixa na margem esquerda */
   .corpo .lateral {
     position: fixed;
@@ -740,7 +752,7 @@ footer {
     display: none;
   }
 
-  dl.itens > div {
+  dl.itens>div {
     grid-template-columns: 1fr;
   }
 }
