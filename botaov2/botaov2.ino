@@ -10,6 +10,10 @@ String chat_id  = "5991796905";
 // ⚠️ Coloque aqui o IP que apareceu no Serial do RECEPTOR
 String ipReceptor = "172.20.10.6";
 
+// Site na Vercel e chave (a mesma da variável ALERTA_CHAVE na Vercel)
+String urlSite  = "https://SEU-SITE.vercel.app";
+String chaveSite = "TROQUE-ESTA-CHAVE";
+
 #define BOTAO 4
 bool estadoAnterior = HIGH;
 
@@ -62,6 +66,18 @@ void enviarAlertaReceptor() {
   http.end();
 }
 
+void enviarAlertaSite() {
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+  http.begin(client, urlSite + "/api/alerta");
+  http.addHeader("x-chave", chaveSite);
+  int httpCode = http.POST("");
+  Serial.print("Site HTTP Code: ");
+  Serial.println(httpCode);
+  http.end();
+}
+
 void loop() {
   bool estadoBotao = digitalRead(BOTAO);
 
@@ -69,6 +85,7 @@ void loop() {
     Serial.println("Botão pressionado!");
     enviarTelegram();
     enviarAlertaReceptor();
+    enviarAlertaSite();
     delay(500);
   }
 

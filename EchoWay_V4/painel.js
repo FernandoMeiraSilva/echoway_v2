@@ -105,3 +105,18 @@ $('entendi').addEventListener('click', function () {
 
 // Sair: apaga o login e volta para a página de venda
 $('sair').addEventListener('click', function () { apagarLogin(); });
+
+// Recebe os toques reais da campainha: consulta /api/avisos a cada 2 s
+var CHAVE_ULTIMO = 'echoway-ultimo-toque';
+var ultimoToque = Number(localStorage.getItem(CHAVE_ULTIMO)) || Date.now();
+setInterval(function () {
+  fetch('/api/avisos?desde=' + ultimoToque, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : { toques: [] }; })
+    .then(function (d) {
+      if (!d.toques || d.toques.length === 0) return;
+      ultimoToque = Math.max.apply(null, d.toques);
+      try { localStorage.setItem(CHAVE_ULTIMO, String(ultimoToque)); } catch (e) {}
+      campainhaAcionada(false);
+    })
+    .catch(function () {});
+}, 2000);
